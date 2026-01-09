@@ -1,6 +1,13 @@
 const page = document.querySelector(".container");
 const body = document.querySelector("body");
 
+function getRandomColor() {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+
 const newGridButton = document.createElement("button");
 newGridButton.textContent = "New Grid";
 newGridButton.style.padding = "1em";
@@ -29,7 +36,7 @@ function createGrid(x) {
         div.style.border = "1px solid black";
         div.style.boxSizing = "border-box";
         div.addEventListener("mouseover", (event) => {
-          div.style.backgroundColor = "black";
+          div.style.backgroundColor = getRandomColor();
         });
         page.appendChild(div);
       }
